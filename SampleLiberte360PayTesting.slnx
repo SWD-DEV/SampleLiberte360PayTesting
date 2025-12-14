@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="ConsoleApp/ConsoleApp.csproj" />
+  <Project Path="SampleLiberte360PayTesting/SampleLiberte360PayTesting.csproj" />
+</Solution>
