@@ -9,7 +9,7 @@
 
   
   <ItemGroup>
-    <PackageReference Include="Liberte360Pay" Version="1.1.5" />
+    <PackageReference Include="Liberte360Pay" Version="1.1.6" />
   </ItemGroup>
 
 </Project>
