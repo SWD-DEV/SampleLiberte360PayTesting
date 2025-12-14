@@ -345,8 +345,8 @@ namespace SampleLiberteTesting.Controllers
                     return StatusCode(StatusCodes.Status422UnprocessableEntity, $" Verification failed: {verifyResponse.Message}");
                 }
 
-                var transactionId = $"DT-{DateTime.UtcNow.Ticks}";
-                var reference = $"debit money from account with TXN-{DateTime.UtcNow.Ticks}";
+                var transactionId = $"D-{DateTime.UtcNow.Ticks}";
+                var reference = $"debit money from account";
 
                 var response = await _threeSixtyPayClient.Collection()
                     .WithAccountName(verifyResponse.Data!.AccountName)
