@@ -63,8 +63,8 @@ class Program
 
             //Console.WriteLine();
 
-            //// Example 6: Bulk Name Verify
-            //await BulkNameVerifyExample(client);
+            // Example 6: Bulk Name Verify
+            await BulkNameVerifyExample(client);
 
             //Console.WriteLine();
 
@@ -528,9 +528,9 @@ class Program
                 Console.WriteLine(" Bulk Name Verify Completed!\n");
                 Console.WriteLine("   Results:");
                 
-                for (int i = 0; i < bulkVerifyResponse.Data?.Results.Count; i++)
+                for (int i = 0; i < bulkVerifyResponse.Data?.Count; i++)
                 {
-                    var result = bulkVerifyResponse.Data.Results[i];
+                    var result = bulkVerifyResponse.Data[i];
                     var statusIcon = result.StatusDesc?.ToLowerInvariant() == "success" ? "S" : "E";
                     
                     Console.WriteLine($"   [{i + 1}] {statusIcon} Account: {result.AccountNumber}");
