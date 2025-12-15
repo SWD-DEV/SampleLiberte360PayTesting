@@ -444,6 +444,28 @@ namespace SampleLiberteTesting.Controllers
             }
         }
 
+        [HttpPost("transaction-status/{reference}/reference")]
+        public async Task<IActionResult> CheckTransactionByReferenceStatus(string reference, CancellationToken cancellationToken)
+        {
+            try
+            {
+                var statusResponse = await _threeSixtyPayClient.TransactionStatusByReference()
+                    .WithReference(reference)
+                    .ExecuteAsync();
+
+                if (statusResponse.IsSuccess)
+                {
+                    return Ok(statusResponse.Data);
+                }
+
+                return Ok(statusResponse.Message);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { error = ex.Message });
+            }
+        }
+
 
         [HttpPost("checkout-init")]
         public async Task<IActionResult> Checkout(
@@ -457,7 +479,7 @@ namespace SampleLiberteTesting.Controllers
                     .WithAmount(amount)
                     .WithPhoneNumber(PHONE)
                     .WithPaymentSlug(slug)
-                    .ExecuteAsync();
+                    .ExecuteAsync(cancellationToken);
 
                 if (response.IsSuccess)
                 {

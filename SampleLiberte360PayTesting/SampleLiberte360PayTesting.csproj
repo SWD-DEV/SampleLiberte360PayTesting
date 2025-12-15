@@ -6,7 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
-    <PackageReference Include="Liberte360Pay" Version="1.1.7" />
+    <PackageReference Include="Liberte360Pay" Version="1.1.8" />
   </ItemGroup>
 
 
